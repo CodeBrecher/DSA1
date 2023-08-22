@@ -75,3 +75,29 @@ void insertionSort(int n, vector<int> &arr)
 //WORST TIME COMPLEXITY: O(N^2)
 //insertion sort is a stable sorting algorithm. A stable sorting algorithm is one that maintains the relative order of equal elements in the sorted output. In other words, if two elements have the same value, their relative order in the input array should be preserved in the sorted array.
 
+//BINARY SEARCH: it happens when the array is sorted
+int search(vector<int> &nums, int target) 
+{
+    int start =0;
+    int end = nums.size()-1;
+    int mid = start + (end - start)/2;
+    int ans =0;
+    while(start <= end)
+    {
+        mid = start + (end - start)/2;
+        if (target== nums[mid] )
+        {
+            return mid;
+        }
+        else if (target>nums[mid])
+        {
+            start = mid +1;
+        }
+        else
+        {
+            end = mid-1;
+        }
+    }
+    return -1;
+}
+
