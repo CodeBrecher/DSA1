@@ -134,4 +134,23 @@ int search(vector<int> &nums, int target)
 
 
 //for matrix type questions check the spiral matrix question on codestudio.
-
+//LECTURE 24
+//Sieve of Eratosthenes (TO check prime or not)
+ int countPrimes(int n) 
+    {
+        vector <bool> prime(n,true);
+        int count =0;
+        for(int i =2; i<n; i++)
+        {
+            if(prime[i])
+            {
+                count ++;
+                for(int j = 2*i; j<n; j= j+i)
+                {
+                    prime[j]=0;
+                }
+            }
+        }
+        return count;
+        
+    }
