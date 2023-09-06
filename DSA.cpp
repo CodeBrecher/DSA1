@@ -158,31 +158,50 @@ int search(vector<int> &nums, int target)
 // Online C++ compiler to run C++ program online
 #include <iostream>
 using namespace std;
-
-int main() {
-    int n;
-    cin>>n;
-    int **arr = new int* [n];
-    for(int i =0; i<n; i++)
-    {
-        arr[i] = new int[n];
+  
+int main()
+{
+    // system("cls");
+  
+    int row, col;
+    row = 3;
+  
+    // Create Row Array- dynamic array of pointers
+    int** arr = new int*[row];
+    int sizes[] = { 4, 2, 3 };
+    // int *sizes= new int[row];
+    // if taking row as input
+  
+    // no of columns for each row as input from user
+    for (int i = 0; i < row; i++) {
+        /*
+        cin>>col;        //if col is taken as input
+        / sizes[i]=col;
+        // store each col number in size ( if row and col
+        // are taken as input)
+        */
+  
+        *(arr + i) = new int[sizes[i]];
+        // creating column of sizes[i] for each row
     }
-    for(int i =0; i<n; i++)
-    {
-        for(int j=0; j<n; j++)
-        {
-            cin>>arr[i][j];
+  
+    // input from user
+    int num = 1;
+    for (int i = 0; i < row; i++) {
+        for (int j = 0; j < sizes[i]; j++) {
+            // cin>>arr[i][j];    //if user want to input
+            arr[i][j] = num++;
         }
     }
-    cout<<endl;
-    for(int i =0; i<n; i++)
-    {
-        for(int j=0; j<n; j++)
-        {
-            cout<<arr[i][j]<<" ";
+  
+    cout << "elements in matrix form as follow" << endl;
+    for (int i = 0; i < row; i++) {
+        for (int j = 0; j < sizes[i]; j++) {
+            cout << arr[i][j] << " ";
         }
-        cout<<endl;
+        cout << endl;
     }
-
+  
     return 0;
 }
+
