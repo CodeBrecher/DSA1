@@ -1,42 +1,0 @@
-GOOD QUESTIONS
-
-FOR 1-D ARRAYS AND STRINGS
-
-	https://www.codingninjas.com/studio/problems/sort-0-1-2_631055?source=youtube&campaign=LoveBabbar_Codestudiovideo1&utm_source=youtube&utm_medium=affiliate&utm_campaign=LoveBabbar_Codestudiovideo1
-	
-	https://leetcode.com/problems/check-if-array-is-sorted-and-rotated/
-	
-	https://leetcode.com/problems/reverse-words-in-a-string/
-
-
-FOR 2-D ARRAYS
-
-	https://leetcode.com/problems/rotate-image/
-	
-	- https://leetcode.com/problems/spiral-matrix/description/
-
-
-RECURSION
-
-	  Optimal solution of power(a,b) of a number using recursion
-	  
-	  void power(int a, int b) 
-	  {      
-	    if(b==0)      
-	     {  
-	       return 1;
-	     }
-	 	    if(b==0)      
-	     {   
-	        return a;       
-	     }
-		    int ans= power(a,b/2);
-		    if (b%2==0)
-	    {
-	      return ans*ans;
-	    };
-		    if(b%2==1)
-	    {
-	      return a*ans*ans;
-	    };
-	  }    
